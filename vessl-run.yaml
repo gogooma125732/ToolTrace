@@ -1,0 +1,13 @@
+name: tooltrace-agent-security-mini-benchmark
+description: ToolTrace mini benchmark for LLM agent tool-call hijacking and taint-based policy guards
+resources:
+  cluster: vessl-oci-sanjose
+  preset: cpu-small
+image: python:3.11-slim
+import:
+  /code/: git://github.com/YOUR_GITHUB_USERNAME/tooltrace-agent-security-mini-benchmark.git
+run:
+  - workdir: /code
+    command: |
+      python app.py --all
+      python -m unittest discover -s tests
