@@ -131,17 +131,15 @@ This is the most presentation-friendly format if you previously used VESSL Works
 
 The notebook also includes optional Hugging Face Hub cells:
 
-- Install `huggingface_hub`.
-- Log in with `notebook_login()` or `HF_TOKEN`.
+- Install `huggingface_hub` and `nbformat`.
+- Log in with a hidden `getpass()` token prompt or `HF_TOKEN`.
+- Enter the Hub repo id through `input()` instead of hardcoding it.
 - Create or reuse a Hub repository.
-- Upload the full benchmark folder.
+- Build a sanitized upload folder that strips notebook outputs, execution counts, and widget metadata.
+- Upload only the sanitized benchmark folder.
 - Verify uploaded files.
 
-Before running the upload cell, replace:
-
-```python
-HF_REPO_ID = "YOUR_HF_USERNAME/tooltrace-agent-security-mini-benchmark"
-```
+Do not paste Hugging Face tokens directly into notebook code cells. The notebook is designed so secrets are entered through runtime prompts and are not uploaded as code or saved outputs.
 
 ### Option B: VESSL Run
 
