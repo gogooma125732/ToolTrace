@@ -162,9 +162,3 @@ vessl run create -f vessl-run.yaml
 
 The run should print the defense comparison table and then execute the unit tests.
 
-## How To Explain This In An Interview
-
-The core point is that agentic AI systems need a security boundary between untrusted external content and privileged tools. The malicious document is data, but a vulnerable agent treats it as an instruction. The policy guard restores the boundary by checking whether a high-risk tool call is confirmed and whether untrusted content flows into sensitive arguments.
-
-This is intentionally small, but it can be extended into a research prototype by adding real LLM calls, more tools, more attack scenarios, and a benchmark table across models and defenses.
-# ToolTrace
